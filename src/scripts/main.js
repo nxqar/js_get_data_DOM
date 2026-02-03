@@ -13,22 +13,8 @@ populationElements.forEach((el) => {
 
 const average = Math.round(total / populationElements.length);
 
-function commas(num) {
-  const str = num.toString();
-  let result = '';
-  let count = 0;
+document.querySelector('.total-population').innerText =
+  total.toLocaleString('en-US');
 
-  for (let i = str.length - 1; i >= 0; i--) {
-    if (count > 0 && count % 3 === 0) {
-      result = ',' + result;
-    }
-    result = str[i] + result;
-    count++;
-  }
-
-  return result;
-}
-
-document.querySelector('.total-population').innerText = commas(total);
-
-document.querySelector('.average-population').innerText = commas(average);
+document.querySelector('.average-population').innerText =
+  average.toLocaleString('en-US');
